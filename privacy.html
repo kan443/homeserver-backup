@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー — homeserver-backup</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1f2328;
+    --muted: #59636e;
+    --line: #d1d9e0;
+    --accent: #0969da;
+    --card: #f6f8fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #9198a1;
+      --line: #3d444d;
+      --accent: #4493f8;
+      --card: #151b23;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+                 "Noto Sans JP", Meiryo, sans-serif;
+    line-height: 1.75;
+  }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 1.6rem; margin: 0 0 .25rem; letter-spacing: -.01em; }
+  .lede { color: var(--muted); margin: 0 0 2.5rem; }
+  h2 { font-size: 1.0625rem; margin: 2.25rem 0 .6rem; padding-bottom: .4rem; border-bottom: 1px solid var(--line); }
+  ul { padding-left: 1.25rem; }
+  li { margin: .35rem 0; }
+  a { color: var(--accent); }
+  code {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: .1em .4em;
+    font-size: .9em;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  }
+  .note {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .en { color: var(--muted); font-size: .925rem; }
+  footer { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>プライバシーポリシー</h1>
+  <p class="lede">homeserver-backup における Google ユーザーデータの取り扱いについて</p>
+
+  <h2>1. このアプリについて</h2>
+  <p>
+    homeserver-backup は、作成者本人が所有するサーバのデータを、
+    作成者本人の Google ドライブへバックアップするための個人利用ツールです。
+    一般に配布しておらず、作成者以外の利用者は存在しません。
+  </p>
+
+  <h2>2. アクセスする Google ユーザーデータ</h2>
+  <div class="note">
+    <p style="margin:0">
+      要求する権限は <code>https://www.googleapis.com/auth/drive.file</code> のみです。
+      この権限では、<strong>アプリ自身が作成したファイルにしかアクセスできません。</strong>
+      利用者が以前から Google ドライブに保存している他のファイル、
+      メール、連絡先、写真などを参照することはありません。
+    </p>
+  </div>
+
+  <h2>3. 利用目的</h2>
+  <ul>
+    <li>バックアップデータを Google ドライブへ書き込むため</li>
+    <li>復元時にバックアップデータを Google ドライブから読み出すため</li>
+    <li>古い世代のバックアップを削除するため</li>
+  </ul>
+  <p>これ以外の目的には使用しません。</p>
+
+  <h2>4. 保存されるデータ</h2>
+  <p>
+    Google ドライブに保存されるのは、バックアップ対象のデータを
+    <a href="https://restic.net/">restic</a> で暗号化したファイルのみです。
+    暗号化は Google ドライブへ送信する前に完了しており、
+    復号鍵は作成者のみが保持します。
+  </p>
+
+  <h2>5. 第三者への提供</h2>
+  <p>
+    取得したデータを第三者へ提供・販売・共有することは一切ありません。
+    解析、広告、機械学習の学習データ等にも使用しません。
+  </p>
+  <p>
+    データの送信先は Google ドライブのみで、
+    Google 以外の外部サービスへ送信することはありません。
+  </p>
+
+  <h2>6. アクセスの取り消しとデータの削除</h2>
+  <p>
+    アプリへのアクセス許可は、Google アカウントの
+    <a href="https://myaccount.google.com/permissions">「サードパーティ製のアプリとサービス」</a>
+    からいつでも取り消せます。
+  </p>
+  <p>
+    保存されたバックアップファイルは、Google ドライブ上で通常のファイルと同じように削除できます。
+  </p>
+
+  <h2>7. 変更について</h2>
+  <p>
+    本ポリシーを変更する場合は、このページを更新します。
+  </p>
+
+  <h2 class="en">Privacy Policy (English)</h2>
+  <p class="en">
+    <strong>homeserver-backup</strong> is a personal-use tool used solely by its author to store
+    encrypted backups of the author's own server onto the author's own Google Drive.
+    It is not distributed to other users.
+  </p>
+  <p class="en">
+    The application requests only the <code>https://www.googleapis.com/auth/drive.file</code>
+    scope. This scope grants access <strong>only to files the application itself creates</strong>;
+    it cannot read or modify any other file, email, contact, or photo in the user's Google account.
+  </p>
+  <p class="en">
+    Data is used exclusively to write, read back, and prune backup archives. All backup
+    content is encrypted with <a href="https://restic.net/">restic</a> before it is uploaded,
+    and the decryption key is held only by the author. No data is sold, shared with third
+    parties, or used for analytics, advertising, or model training. No data is transmitted
+    to any destination other than Google Drive.
+  </p>
+  <p class="en">
+    Access can be revoked at any time from
+    <a href="https://myaccount.google.com/permissions">Google Account &rarr; Third-party apps &amp; services</a>,
+    and stored backup files can be deleted from Google Drive like any other file.
+  </p>
+
+  <footer>
+    <a href="./">homeserver-backup</a> ・
+    お問い合わせ / Contact: <a href="https://github.com/kan443">github.com/kan443</a>
+  </footer>
+
+</main>
+</body>
+</html>

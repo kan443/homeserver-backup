@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>homeserver-backup</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1f2328;
+    --muted: #59636e;
+    --line: #d1d9e0;
+    --accent: #0969da;
+    --card: #f6f8fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #9198a1;
+      --line: #3d444d;
+      --accent: #4493f8;
+      --card: #151b23;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+                 "Noto Sans JP", Meiryo, sans-serif;
+    line-height: 1.75;
+  }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: 1.75rem; margin: 0 0 .25rem; letter-spacing: -.01em; }
+  .lede { color: var(--muted); margin: 0 0 2.5rem; }
+  h2 { font-size: 1.125rem; margin: 2.5rem 0 .75rem; padding-bottom: .4rem; border-bottom: 1px solid var(--line); }
+  p, li { color: var(--fg); }
+  ul { padding-left: 1.25rem; }
+  li { margin: .35rem 0; }
+  a { color: var(--accent); }
+  code {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: .1em .4em;
+    font-size: .9em;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  }
+  .note {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .en { color: var(--muted); font-size: .925rem; }
+  footer { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>homeserver-backup</h1>
+  <p class="lede">個人が所有するサーバのデータを、所有者本人の Google ドライブへバックアップするための、個人利用専用のツールです。</p>
+
+  <h2>できること</h2>
+  <p>
+    自宅で稼働している小規模なサーバ上のデータベースや設定ファイルを、
+    暗号化したうえで所有者自身の Google ドライブへ定期的に保存します。
+    バックアップの作成と復元にのみ使用します。
+  </p>
+  <ul>
+    <li>バックアップの保存先として Google ドライブを利用します</li>
+    <li>保存するデータは、保存前に <a href="https://restic.net/">restic</a> によって暗号化されます</li>
+    <li>Google ドライブとの通信には <a href="https://rclone.org/">rclone</a> を使用します</li>
+  </ul>
+
+  <h2>アクセスする範囲</h2>
+  <div class="note">
+    <p style="margin:0">
+      このアプリが要求する権限は <code>drive.file</code> のみです。
+      <strong>このアプリ自身が作成したファイルにしかアクセスできません。</strong>
+      利用者が以前から Google ドライブに保存している他のファイルを、
+      参照することも変更することもできません。
+    </p>
+  </div>
+
+  <h2>利用者</h2>
+  <p>
+    このアプリは作成者本人だけが使用します。一般に配布・提供しているものではなく、
+    他の利用者を受け入れる予定もありません。
+  </p>
+
+  <h2>データの取り扱い</h2>
+  <p>
+    Google ユーザーデータの取得・利用・保存・共有については
+    <a href="./privacy.html">プライバシーポリシー</a>に記載しています。
+  </p>
+
+  <h2 class="en">Summary (English)</h2>
+  <p class="en">
+    <strong>homeserver-backup</strong> is a personal-use tool that stores encrypted backups
+    of the author's own home server onto the author's own Google Drive.
+    It requests only the <code>drive.file</code> scope, so it can access
+    <strong>only the files it creates itself</strong> and cannot read or modify
+    any other file in the user's Drive. It is used solely by its author and is not
+    distributed to other users. See the
+    <a href="./privacy.html">Privacy Policy</a> for details on data handling.
+  </p>
+
+  <footer>
+    お問い合わせ / Contact: <a href="https://github.com/kan443">github.com/kan443</a>
+  </footer>
+
+</main>
+</body>
+</html>
